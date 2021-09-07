@@ -1,40 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 using NoodleApi.Models;
 
 namespace NoodleApi.Data
 {
-    public class CourseContext : ICourseService
+    public class CourseContext : DbContext
     {
-        Task ICourseService.ArchiveCourseAsync(Guid id)
+        public CourseContext(DbContextOptions<CourseContext> options)
+            : base(options)
         {
-            throw new NotImplementedException();
         }
 
-        Task ICourseService.CreateCourseAsync(Course course)
-        {
-            throw new NotImplementedException();
-        }
+        public DbSet<Course> Courses { get; set; }
 
-        Task ICourseService.DeleteCourseAsync(Guid id)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            throw new NotImplementedException();
-        }
-
-        Task<Course> ICourseService.GetCourseAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IEnumerable<Course>> ICourseService.GetCoursesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task ICourseService.UpdateCourseAsync(Course course)
-        {
-            throw new NotImplementedException();
+            modelBuilder.Entity<Course>().ToTable("Course");
         }
     }
 }
