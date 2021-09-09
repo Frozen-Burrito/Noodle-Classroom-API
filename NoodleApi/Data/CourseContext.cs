@@ -15,10 +15,16 @@ namespace NoodleApi.Data
         }
 
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Publication> Publications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Course>().ToTable("Course");
+            modelBuilder.Entity<Course>()
+                .ToTable("Course")
+                .HasMany(c => c.Publications)
+                .WithOne();
+                
+            modelBuilder.Entity<Publication>().ToTable("Publication");
         }
     }
 }
