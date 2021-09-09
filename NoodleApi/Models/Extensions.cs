@@ -32,6 +32,22 @@ namespace NoodleApi.Models
             };
         }
 
+        public static Course AsModel(this CourseDTO courseDTO)
+        {
+            return new Course
+            {
+                Id = courseDTO.Id,
+                Name = courseDTO.Name,
+                AreaOfStudy = courseDTO.AreaOfStudy,
+                Description = courseDTO.Description,
+                CourseType = courseDTO.CourseType,
+                Publications = courseDTO.Publications.Select(p => p.AsModel()).ToList(),
+                MeetingUrl = courseDTO.MeetingUrl,
+                IsArchived = courseDTO.IsArchived,
+                CreatedDate = courseDTO.CreatedDate
+            };
+        }
+
         public static PublicationDTO AsDTO(this Publication publication)
         {
             return new PublicationDTO
@@ -42,6 +58,19 @@ namespace NoodleApi.Models
                 Value = publication.Value,
                 CreatedDate = publication.CreatedDate,
                 ModifiedDate = publication.ModifiedDate
+            };
+        }
+
+        public static Publication AsModel(this PublicationDTO publicationDTO)
+        {
+            return new Publication
+            {
+                Id = publicationDTO.Id,
+                Title = publicationDTO.Title,
+                Body = publicationDTO.Body,
+                Value = publicationDTO.Value,
+                CreatedDate = publicationDTO.CreatedDate,
+                ModifiedDate = publicationDTO.ModifiedDate
             };
         }
     }
