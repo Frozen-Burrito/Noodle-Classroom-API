@@ -37,6 +37,8 @@ namespace NoodleApi
             services.AddDbContext<CourseContext>(options => 
                     options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
             */
+
+            services.AddScoped<ICourseService, CourseRepository>();
             
             services.AddControllers();
             services.AddSwaggerGen(c =>
