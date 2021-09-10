@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NoodleClassroom.Api.Test.Util</name>
+    </assembly>
+    <members>
+        <member name="T:NoodleApi.Tests.Util.CollectionEquivalenceComparer">
+            <summary>
+               The <c>CourseControllerTests</c> class contains all tests for the 
+               <c>CourseController</c> API class.
+            </summary>
+            <remarks>
+            <para>
+                There is at least one test method for each controller method.
+            </para>
+            <para>
+                A few private utility methods are used for convenience.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Tests.Util.CollectionEquivalenceComparer.Equals(System.Collections.Generic.IEnumerable,System.Collections.Generic.IEnumerable)">
+            <summary>
+                Compares two <c>IEnumerable</c> instances <paramref name="x"/> 
+                and <paramref name="y"/> for equivalence.
+            </summary>
+            <returns>
+                True, if collections are equivalent, comparing every element.
+                False, if collections are not equivalent.
+            </returns>
+            <param name="x">The first collection</param>
+            <param name="y">The second collection</param>
+        </member>
+        <member name="M:NoodleApi.Tests.Util.CollectionEquivalenceComparer.GetHashCode(System.Collections.Generic.IEnumerable)">
+            <summary>
+                Returns the hash code produced by the current instance 
+                and <paramref name="obj"/>.
+            </summary>
+            <returns>
+                An int, the collection's hash code.
+            </returns>
+            <exception cref="T:System.NotImplementedException">
+                Thrown when an invoked method is not implemented yet.
+            </exception>
+            <param name="obj">The other collection</param>
+        </member>
+    </members>
+</doc>

@@ -9,7 +9,7 @@
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>NoodleClassroom.Api.Test</AssemblyName>
-    <DocumentationFile>bin\$(Configuration)\NoodleApi.Test.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\docs\NoodleApi.Test.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

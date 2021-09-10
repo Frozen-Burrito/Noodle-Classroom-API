@@ -18,32 +18,11 @@ namespace NoodleApi.Tests
         The CourseControllerTests class contains all tests for the 
         CourseController API class.
     */
-    /// <summary>
-    ///    The <c>CourseControllerTests</c> class contains all tests for the 
-    ///    <c>CourseController</c> API class.
-    /// </summary>
-    /// <remarks>
-    /// <para>
-    /// There is at least one test method for each controller method.
-    /// </para>
-    /// <para>
-    /// A few private utility methods are used for convenience.
-    /// </para>
-    /// </remarks>
+    /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="T:NoodleApi.Tests.CourseControllerTests"]/*'/>
     public class CourseControllerTests
     {
         // Creates a random CourseDTO object.
-        /// <summary>
-        ///    Creates a random <c>CourseDTO</c> object.
-        /// </summary>
-        /// <returns>
-        ///     The <c>CourseDTO</c> instance.
-        /// </returns>
-        /// <example>
-        /// <code> 
-        /// CourseDTO course = CreateRandomCourse();
-        /// </code>
-        /// </example>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.CreateRandomCourse"]/*'/>
         private CourseDTO CreateRandomCourse()
         {
             return new CourseDTO()
@@ -61,17 +40,7 @@ namespace NoodleApi.Tests
         }
 
         // Creates a random CourseSimplifiedDTO object.
-        /// <summary>
-        ///    Creates a random <c>CourseSimplifiedDTO</c> object.
-        /// </summary>
-        /// <returns>
-        ///     The <c>CourseSimplifiedDTO</c> instance.
-        /// </returns>
-        /// <example>
-        /// <code> 
-        /// CourseSimplifiedDTO course = CreateRandomSimplifiedCourse();
-        /// </code>
-        /// </example>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.CreateRandomSimplifiedCourse"]/*'/>
         private CourseSimplifiedDTO CreateRandomSimplifiedCourse()
         {
             return new CourseSimplifiedDTO()
@@ -85,19 +54,7 @@ namespace NoodleApi.Tests
         }
 
         // Adds various random CourseDTO instances to a List<CourseDTO>
-        /// <summary>
-        ///    Adds various random <c>CourseDTO</c> instances to a List
-        /// </summary>
-        /// <returns>
-        ///     The <c>List of CourseDTO</c> instance.
-        /// </returns>
-        /// <example>
-        /// <code> 
-        /// int n = 5;
-        /// var courses = GetTestCourses(n);
-        /// </code>
-        /// </example>
-        /// <param name="count">The desired size of the returned list.</param>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.GetTestCourses(System.Int32)"]/*'/>
         private List<CourseDTO> GetTestCourses(int count = 1)
         {
             var courses = new List<CourseDTO>();
@@ -111,18 +68,7 @@ namespace NoodleApi.Tests
         }
 
         // Adds various random CourseSimplifiedDTO instances to a List<CourseSimplifiedDTO>
-        /// <summary>
-        ///    Adds various random <c>CourseSimplifiedDTO</c> instances to a List
-        /// </summary>
-        /// <returns>
-        ///     The <c>List of CourseSimplifiedDTO</c> instance.
-        /// </returns>
-        /// <example>
-        /// <code> 
-        /// var courses = GetTestSimplifiedCourses(3);
-        /// </code>
-        /// </example>
-        /// <param name="count">The desired size of the returned list.</param>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.GetTestSimplifiedCourses(System.Int32)"]/*'/>
         private List<CourseSimplifiedDTO> GetTestSimplifiedCourses(int count = 1)
         {
             var simplifiedCourses = new List<CourseSimplifiedDTO>();
@@ -137,20 +83,7 @@ namespace NoodleApi.Tests
 
         #region GetCourses
         // Test for the GetCourses method, asserts a matching total count.
-        /// <summary>
-        ///    Test for the <c>GetCourses</c> method, asserts a matching total count.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        ///     Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
-        ///     <c>CourseController</c>
-        /// </para>
-        /// <para>
-        ///     Asserts that the size of the collection returned by 
-        ///     <c>CourseController.GetCourses()</c> is equal to the expected
-        ///     element count.
-        /// </para>
-        /// </remarks>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.GetCourses_NoParams_ReturnsMatchingTotalCount"]/*'/>
         [Fact]
         public async Task GetCourses_NoParams_ReturnsMatchingTotalCount()
         {
@@ -171,21 +104,7 @@ namespace NoodleApi.Tests
         }
 
         // Test for the GetCourses method, asserts equivalent collections.
-        /// <summary>
-        ///    Test for the <c>GetCourses</c> method, asserts equivalent collections.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        ///     Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
-        ///     <c>CourseController</c>, populating the repository with a random 
-        ///     collection of <c>Course</c> instances.
-        /// </para>
-        /// <para>
-        ///     Asserts that the collection returned by 
-        ///     <c>CourseController.GetCourses()</c> is equal to the expected
-        ///     collection.
-        /// </para>
-        /// </remarks>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.GetCourses_ExistingCourses_ReturnsAllCourses"]/*'/>
         [Fact]
         public async Task GetCourses_ExistingCourses_ReturnsAllCourses()
         {
@@ -210,20 +129,7 @@ namespace NoodleApi.Tests
         #endregion
 
         // Test for the GetSimpleCourses method, asserts a matching total count.
-        /// <summary>
-        ///     Test for the <c>GetSimpleCourses</c> method, asserts a matching total count.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        ///     Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
-        ///     <c>CourseController</c>.
-        /// </para>
-        /// <para>
-        ///     Asserts that the size of the collection of <c>CourseSimplifiedDTO</c> instances
-        ///     returned by <c>CourseController.GetSimpleCourses()</c> is equal to the expected
-        ///     element count.
-        /// </para>
-        /// </remarks>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.GetSimpleCourses_NoParams_ReturnsMatchingTotalCount"]/*'/>
         [Fact]
         public async Task GetSimpleCourses_NoParams_ReturnsMatchingTotalCount()
         {
@@ -246,20 +152,7 @@ namespace NoodleApi.Tests
         #region GetCourse
         // Test for the GetCourse method with a random unexisting Course ID, asserts the
         // type of the result to be NotFoundResult.
-        /// <summary>
-        ///    Test for the <c>GetCourse</c> method with a random unexisting Course ID, asserts the
-        ///     type of the result to be <c>NotFoundResult</c>.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        ///     Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
-        ///     <c>CourseController</c>.
-        /// </para>
-        /// <para>
-        ///     Asserts that the type of the result returned by
-        ///     <c>CourseController.GetCourse(Guid id)</c> is <c>NotFoundResult</c>
-        /// </para>
-        /// </remarks>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.GetCourse_UnexistingCourseId_ReturnsNotFoundResult"]/*'/>
         [Fact]
         public async Task GetCourse_UnexistingCourseId_ReturnsNotFoundResult()
         {
@@ -282,24 +175,9 @@ namespace NoodleApi.Tests
 
         // Test for the GetCourse method with a random Course ID, asserts the 
         // equivalence between the result and the expected CourseDTO objects.
-        /// <summary>
-        ///    Test for the <c>GetCourse</c> method with a random Course ID, asserts the
-        ///    equivalence between the result and the expected <c>CourseDTO</c> objects.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        ///     Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
-        ///     <c>CourseController</c>.
-        /// </para>
-        /// <para>
-        ///     Populates the <c>ICourseService</c> with a random number of randomized courses,
-        ///     then asserts that the <c>CourseDTO</c> object retrieved by a call to 
-        ///     <c>CourseController.GetCourse(Guid id)</c> is equivalent to the original 
-        ///     <c>CourseDTO</c> object inserted in the repository.
-        /// </para>
-        /// </remarks>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.GetCourse_ValidCourseId_ReturnsCorrectCourse"]/*'/>
         [Fact]
-        public async Task GetCourse_ReturnsCorrectCourse()
+        public async Task GetCourse_ValidCourseId_ReturnsCorrectCourse()
         {
             // Arrange
             int courseIndex = new Random().Next(3);
@@ -324,21 +202,7 @@ namespace NoodleApi.Tests
    
         // Test for the CreateCourse method with a valid CourseDTO payload,
         // assert that the resulting object is equivalent to the original.
-        /// <summary>
-        ///     Test for the <c>CreateCourse</c> method with a valid <c>CourseDTO</c> payload,
-        ///     assert that the resulting object is equivalent to the original.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        ///     Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
-        ///     <c>CourseController</c>.
-        /// </para>
-        /// <para>
-        ///     Asserts that the <c>CourseDTO</c> object returned by the
-        ///     <c>CourseController.CreateCourse(CourseDTO newCourse)</c> method is equivalent
-        ///     to the object originally sent as payload.
-        /// </para>
-        /// </remarks>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.CreateCourseAsync_ValidCourse_ReturnsCreatedCourse"]/*'/>
         [Fact]
         public async Task CreateCourseAsync_ValidCourse_ReturnsCreatedCourse()
         {
@@ -360,21 +224,7 @@ namespace NoodleApi.Tests
 
         // Test for the DeleteCourse method with a valid course Id,
         // assert that the type of the action result is NoContentResult.
-        /// <summary>
-        ///     Test for the <c>DeleteCourse</c> method with a valid course <c>id</c>,
-        ///     assert that the type of the action result is <c>NoContentResult</c>.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        ///     Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
-        ///     <c>CourseController</c>.
-        /// </para>
-        /// <para>
-        ///     Asserts that the result produced by the call to
-        ///     <c>CourseController.DeleteCourse(Guid id)</c> method with a valid <c>id</c>
-        ///     is of type <c>NoContentResult</c>.
-        /// </para>
-        /// </remarks>
+        /// <include file='docs/tests_doc.xml' path='/doc/members/member[@name="M:NoodleApi.Tests.CourseControllerTests.DeleteCourseAsync_ExistingCourse_ReturnsNoContentResult"]/*'/>
         [Fact]
         public async Task DeleteCourseAsync_ExistingCourse_ReturnsNoContentResult()
         {

@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NoodleClassroom.Api.Test</name>
+    </assembly>
+    <members>
+        <member name="T:NoodleApi.Tests.CourseControllerTests">
+            <summary>
+               The <c>CourseControllerTests</c> class contains all tests for the 
+               <c>CourseController</c> API class.
+            </summary>
+            <remarks>
+            <para>
+                There is at least one test method for each controller method.
+            </para>
+            <para>
+                A few private utility methods are used for convenience.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.CreateRandomCourse">
+            <summary>
+                Creates a random <c>CourseDTO</c> object.
+            </summary>
+            <returns>
+                The <c>CourseDTO</c> instance.
+            </returns>
+            <example>
+            <code> 
+                CourseDTO course = CreateRandomCourse();
+            </code>
+            </example>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.CreateRandomSimplifiedCourse">
+            <summary>
+                Creates a random <c>CourseSimplifiedDTO</c> object.
+            </summary>
+            <returns>
+                The <c>CourseSimplifiedDTO</c> instance.
+            </returns>
+            <example>
+            <code> 
+                CourseSimplifiedDTO course = CreateRandomSimplifiedCourse();
+            </code>
+            </example>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.GetTestCourses(System.Int32)">
+            <summary>
+                Adds various random <c>CourseDTO</c> instances to a List
+            </summary>
+            <returns>
+                The <c>List of CourseDTO</c> instance.
+            </returns>
+            <example>
+            <code> 
+                int n = 5;
+                var courses = GetTestCourses(n);
+            </code>
+            </example>
+            <param name="count">The desired size of the returned list.</param>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.GetTestSimplifiedCourses(System.Int32)">
+            <summary>
+                Adds various random <c>CourseSimplifiedDTO</c> instances to a List
+            </summary>
+            <returns>
+                The <c>List of CourseSimplifiedDTO</c> instance.
+            </returns>
+            <example>
+            <code> 
+                var courses = GetTestSimplifiedCourses(3);
+            </code>
+            </example>
+            <param name="count">The desired size of the returned list.</param>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.GetCourses_NoParams_ReturnsMatchingTotalCount">
+            <summary>
+                Test for the <c>GetCourses</c> method, asserts a matching total count.
+            </summary>
+            <remarks>
+            <para>
+                Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
+                <c>CourseController</c>
+            </para>
+            <para>
+                Asserts that the size of the collection returned by 
+                <c>CourseController.GetCourses()</c> is equal to the expected
+                element count.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.GetCourses_ExistingCourses_ReturnsAllCourses">
+            <summary>
+                Test for the <c>GetCourses</c> method, asserts equivalent collections.
+            </summary>
+            <remarks>
+            <para>
+                Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
+                <c>CourseController</c>, populating the repository with a random 
+                collection of <c>Course</c> instances.
+            </para>
+            <para>
+                Asserts that the collection returned by 
+                <c>CourseController.GetCourses()</c> is equal to the expected
+                collection.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.GetSimpleCourses_NoParams_ReturnsMatchingTotalCount">
+            <summary>
+                Test for the <c>GetSimpleCourses</c> method, asserts a matching total count.
+            </summary>
+            <remarks>
+            <para>
+                Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
+                <c>CourseController</c>.
+            </para>
+            <para>
+                Asserts that the size of the collection of <c>CourseSimplifiedDTO</c> instances
+                returned by <c>CourseController.GetSimpleCourses()</c> is equal to the expected
+                element count.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.GetCourse_UnexistingCourseId_ReturnsNotFoundResult">
+            <summary>
+                Test for the <c>GetCourse</c> method with a random unexisting Course ID, asserts the
+                type of the result to be <c>NotFoundResult</c>.
+            </summary>
+            <remarks>
+            <para>
+                Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
+                <c>CourseController</c>.
+            </para>
+            <para>
+                Asserts that the type of the result returned by
+                <c>CourseController.GetCourse(Guid id)</c> is <c>NotFoundResult</c>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.GetCourse_ValidCourseId_ReturnsCorrectCourse">
+            <summary>
+                Test for the <c>GetCourse</c> method with a random Course ID, asserts the
+                equivalence between the result and the expected <c>CourseDTO</c> objects.
+            </summary>
+            <remarks>
+            <para>
+                Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
+                <c>CourseController</c>.
+            </para>
+            <para>
+                Populates the <c>ICourseService</c> with a random number of randomized courses,
+                then asserts that the <c>CourseDTO</c> object retrieved by a call to 
+                <c>CourseController.GetCourse(Guid id)</c> is equivalent to the original 
+                <c>CourseDTO</c> object inserted in the repository.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.CreateCourseAsync_ValidCourse_ReturnsCreatedCourse">
+            <summary>
+                Test for the <c>CreateCourse</c> method with a valid <c>CourseDTO</c> payload,
+                assert that the resulting object is equivalent to the original.
+            </summary>
+            <remarks>
+            <para>
+                Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
+                <c>CourseController</c>.
+            </para>
+            <para>
+                Asserts that the <c>CourseDTO</c> object returned by the
+                <c>CourseController.CreateCourse(CourseDTO newCourse)</c> method is equivalent
+                to the object originally sent as payload.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Tests.CourseControllerTests.DeleteCourseAsync_ExistingCourse_ReturnsNoContentResult">
+            <summary>
+                Test for the <c>DeleteCourse</c> method with a valid course <c>id</c>,
+                assert that the type of the action result is <c>NoContentResult</c>.
+            </summary>
+            <remarks>
+            <para>
+                Creates a mock <c>ICourseService</c>, <c>ILogger</c> and 
+                <c>CourseController</c>.
+            </para>
+            <para>
+                Asserts that the result produced by the call to
+                <c>CourseController.DeleteCourse(Guid id)</c> method with a valid <c>id</c>
+                is of type <c>NoContentResult</c>.
+            </para>
+            </remarks>
+        </member>
+    </members>
+</doc>
