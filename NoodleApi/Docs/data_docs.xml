@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NoodleClassroom.Api.Data</name>
+    </assembly>
+    <members>
+        <member name="T:NoodleApi.Data.RelationalCourseRepository">
+            <summary>
+                Retrieves and inserts course and publication data from a relational
+                database.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.RelationalCourseRepository.Constructor">
+            <summary>
+                Construct an instance with a given database context.
+            </summary>
+        </member>
+
+        <member name="T:NoodleApi.Data.CourseContext">
+            <summary>
+                Uses Entity Framework Core to provide a relational database context
+                for the application. Can be used with SQLite or SQL Server.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.CourseContext.Constructor">
+            <summary>
+                Initializes the CourseContext instance, invokes base constructor 
+                DbContext(options).
+            </summary>
+        </member>
+        <member name="P:NoodleApi.Data.CourseContext.Courses">
+            <summary>
+                A collection of courses.
+            </summary>
+        </member>
+        <member name="P:NoodleApi.Data.CourseContext.Constructor.Publications">
+            <summary>
+                A collection of publications.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.CourseContext.OnModelCreating(ModelBuilder modelBuilder)">
+            <summary>
+                Called when creating the database schema. Configures models.
+            </summary>
+        </member>
+
+        <member name="T:NoodleApi.Data.ICourseService">
+            <summary>
+                Provides methods for operations related to creating, retrieving, modifying
+                and deleting courses and its publications.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.GetCoursesAsync">
+            <summary>
+                Retrieves a list of courses.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.GetCourseAsync(Guid id)">
+            <summary>
+                Searches the context for a course with the given id.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.Constructor.GetSimplifiedCoursesAsync">
+            <summary>
+                Retrieves a list of courses, in a reduced format.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.GetCoursePublicationsAsync(Guid id)">
+            <summary>
+                Retrieves all publications from a course.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.CreateCourseAsync(Course course)">
+            <summary>
+                Creates a new course and saves it.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.UpdateCourseAsync(Course course)">
+            <summary>
+                Updates the saved instance of an existing course.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.ArchiveCourseAsync(Guid id)">
+            <summary>
+                Toggles the archived status of a given course.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.DeleteCourseAsync(Guid id)">
+            <summary>
+                Deletes an existing course.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.CreateCoursePublication(Guid courseId, PublicationDTO publication)">
+            <summary>
+               Creates a new publication associated with the specified course.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.GetCoursePublicationById(Guid id)">
+            <summary>
+                Retrieves a publication with the given id.
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Data.ICourseService.DeleteCoursePublication(Guid id)">
+            <summary>
+                Deletes an existing publication.
+            </summary>
+        </member>
+    </members>
+</doc>

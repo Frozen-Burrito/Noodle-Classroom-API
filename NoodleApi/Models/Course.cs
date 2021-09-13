@@ -5,12 +5,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NoodleApi.Models
 {
+    // Represents the possible types of courses.
     public enum CourseType 
     {
         Class,
         Workshop
     }
 
+    // Holds information for a specific course, references a collection
+    // of publications and another one of users.
     public class Course
     {
         public Guid Id { get; set; }

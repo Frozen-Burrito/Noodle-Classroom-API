@@ -1,5 +1,7 @@
 using System.Linq;
 
+#pragma warning disable 1591
+
 namespace NoodleApi.Models
 {
     public static class Extensions

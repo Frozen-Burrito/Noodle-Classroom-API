@@ -15,6 +15,8 @@ using Microsoft.OpenApi.Models;
 
 using NoodleApi.Data;
 
+#pragma warning disable 1591
+
 namespace NoodleApi
 {
     public class Startup
@@ -43,7 +45,15 @@ namespace NoodleApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NoodleApi", Version = "v1" });
+                c.SwaggerDoc(
+                    "v1", 
+                    new OpenApiInfo 
+                    { 
+                        Title = "NoodleApi", 
+                        Version = "v1",
+                        Description = "An API for the Noodle Classroom App."
+                    }
+                );
             });
         }
 

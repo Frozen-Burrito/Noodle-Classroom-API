@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NoodleClassroom.Api.Controllers</name>
+    </assembly>
+    <members>
+        <member name="T:NoodleApi.Controllers.CourseController">
+            <summary>
+               The <c>CourseControllerTests</c> class contains all tests for the 
+               <c>CourseController</c> API class.
+            </summary><remarks>
+            <para>
+                There is at least one test method for each controller method.
+            </para>
+            <para>
+                A few private utility methods are used for convenience.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.CourseController">
+            
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.GetCourses">
+            <summary>
+                Returns all courses in the repository.
+            </summary>
+            <response code="200">All courses are sent along the response.</response>
+            <response code="500">A server error occurred while procesing the request.</response>
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.GetSimplifiedCourses">
+            <summary>
+                Returns all courses in the repository in a minified format.
+            </summary>
+            <response code="200">All minified courses are sent along the response.</response>
+            <response code="500">A server error occurred while procesing the request.</response>
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.GetCourse(System.Guid)">
+            <summary>
+                Searches the repository for a certain course.
+            </summary>
+            <param name="id">The Guid of the course</param>
+            <response code="200">The course was found and is sent along the response.</response>
+            <response code="404">A course with the specified id was not found.</response>
+            <response code="500">A server error occurred while procesing the request.</response>
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.CreateCourse(CourseDTO course)">
+            <summary>
+                Creates a new course and saves it to the repository.
+            </summary>
+            <response code="201">Course successfully created, response contains location header.</response>
+            <response code="406">The request payload is not valid for this resource.</response>
+            <response code="500">A server error occurred while procesing the request.</response>
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.DeleteCourse(System.Guid id)">
+            <summary>
+                Removes an existing course from the collection.
+            </summary>
+            <response code="204">Course successfully deleted. No content on response.</response>
+            <response code="404">A course with the specified id was not found.</response>
+            <response code="500">A server error occurred while procesing the request.</response>
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.GetCoursePublications(System.Guid courseId)">
+            <summary>
+                Retrieves all the publications assigned with a specific course.
+            </summary>
+            <param name="courseId">The Guid of the course</param>
+            <response code="200">Response body contains a list of publications</response>
+            <response code="404">A course with the specified id was not found.</response>
+            <response code="500">A server error occurred while procesing the request.</response>
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.CreateCoursePublication(System.Guid courseId, PublicationDTO publication)">
+            <summary>
+
+            </summary>
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.GetCoursePublicationById(System.Guid courseId, System.Guid id)">
+            
+        </member>
+        <member name="M:NoodleApi.Controllers.CourseController.DeleteCoursePublication(System.Guid courseId, System.Guid id)">
+            
+        </member>
+    </members>
+</doc>
